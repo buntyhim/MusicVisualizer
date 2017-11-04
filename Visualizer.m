@@ -1,9 +1,9 @@
 clc
-[filename,path] = uigetfile('*.mp3','Select Song');
+[filename,path] = uigetfile('*.mp3','Select Song');             % change the file type to format desired
 [a,Fs] = audioread([path filename]);
 a = a(:,1);
 p = audioplayer(a,Fs);
-nfft = 1024*4;
+nfft = 1024*4;                              % this value define the resolution of our fft i.e higher values means sharter peaks
 xfft = Fs*(0:nfft/2-1)/nfft;
 figure('Name','VISUALIZER','Color','[0 0.4 0.1]')
 
